@@ -5,10 +5,317 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob:;">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UNI Enterprise | Data Distribution & Insights</title>
-  <!-- Styles and content will continue as previously included... -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    .container {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #ccc;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 999px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+    .btn-primary img {
+      width: 20px;
+      height: 20px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4rem;
+      gap: 2rem;
+    }
+    .feature-card {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);
+    }
+    .feature-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+    .highlight {
+      color: #2c84fa;
+      font-weight: bold;
+    }
+      .trusted-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .trusted-logos img {
+      height: 40px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+    }
+    .trusted-logos img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+      .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-<!-- Full HTML content has already been validated -->
-<!-- This placeholder gets replaced during deployment -->
+  <header style="position: absolute; top: 20px; left: 20px; z-index: 10; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 2rem; box-sizing: border-box;">
+    <img src="https://i.imgur.com/s8XQvEv.png" alt="UNI Logo" style="height: 40px; filter: brightness(0) invert(1);">
+    <nav style="display: flex; gap: 2rem;">
+      <a href="#atlasQuery" style="color: white; text-decoration: none; font-weight: 500;">Try it Out</a>
+      <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" style="color: white; text-decoration: none; font-weight: 500;">Sign Up</a>
+      <a href="#how-it-works" style="color: white; text-decoration: none; font-weight: 500;">How it works</a>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="hero-content">
+      <h1 style="color: #2c84fa; background: none; -webkit-text-fill-color: initial;">Where Culture Becomes Data</h1>
+      <h2 style="color: #ffffff;">Real-Time Social Insights On-Demand.</h2>
+    </div>
+    <p>Leverage real-time behavioral intelligence to supercharge your outreach, refine your targeting, and fuel your next breakout campaign.</p>
+    <button class="btn-primary" style="background-color: #2c84fa; background-image: none;">Get started</button>
+
+    <div class="features">
+      <div class="feature-card">
+        <img src="https://i.imgur.com/AOknZdH.jpeg" alt="Plug-and-Play Dashboard">
+        <h3>Plug-and-Play Dashboards</h3>
+        <p>Visualize UNI’s real-world social data in real time. Know who’s out, where they go, and what they love—all from a sleek, prebuilt dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.imgur.com/yK5k93R.png" alt="Data Access Icon" style="width: 90%; height: auto; border-radius: 0.5rem; margin: 0 auto 1rem; display: block;">
+        <h3>First-Party Data Access</h3>
+        <p>From favorite artists to outing frequency, tap into granular interest-level data captured directly from user behavior, not assumptions.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://images.firstpost.com/uploads/2025/01/In-US-TikTok-Ban-Meta-and-Google-will-emerge-as-true-winners-as-they-divvy-up-ad-revenue-2025-01-de3996b8d257d4d7e5cf56ba96272c35-1200x675.jpg?im=FitAndFill=(1200,675)" alt="Audience Sync" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;">
+        <h3>Audience Sync</h3>
+        <p>Export hyper-specific segments into Meta, TikTok, or email pipelines for retargeting that feels native, not noisy.</p>
+      </div>
+    </div>
+
+    <div class="container" id="how-it-works" style="margin-top: 4rem;">
+  <h2 style="color: #2c84fa; font-size: 1.75rem;">How It Works</h2>
+  <p style="color: #ccc; max-width: 800px; margin: 0 auto 2rem; font-size: 1.125rem;">UNI is the #1 app for real-life discovery, helping users uncover everything happening around them through personalized, dynamic maps powered by the world’s biggest event and location databases. Users create detailed profiles based on their favorite artists, go-to spots, college, and lifestyle preferences. Every RSVP, check-in, and interaction is encrypted and converted into real-time behavioral insights—fueling smarter recommendations for users and powering UNI’s unparalleled data solutions.</p>
+  <img src="https://i.imgur.com/hd3R7U5.png" alt="How UNI Works Diagram" style="max-width: 100%; border-radius: 1rem; box-shadow: 0 0 20px rgba(44, 132, 250, 0.3);">
+</div>
+
+<div class="carousel-section" style="margin-top: 4rem;">
+    <h2 style="color: #2c84fa; text-align: center; font-size: 1.75rem;">Intricate & Intuitive Solutions</h2>
+    <div class="carousel" style="display: flex; overflow-x: auto; gap: 2rem; padding: 2rem 0; scroll-snap-type: x mandatory;">
+      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
+        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Insights</h3>
+        <p style="color: #aaa;">Harness the behavioral pulse of the culture. Real-time dashboards powered by our AI show you the when, where, and why behind your audience.</p>
+      </div>
+      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
+        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Connective Advertising</h3>
+        <p style="color: #aaa;">Deliver campaigns that feel like community. Our AI syncs your brand message with real moments and hyper-relevant local trends.</p>
+      </div>
+      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
+        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Atlas</h3>
+        <p style="color: #aaa;">Let UNI Atlas generate strategic reports for you. From nightlife trends to interest-based audience clusters—automated, exportable, and beautiful.</p>
+      </div>
+    </div>
+  </div>
+
+<div class="container" style="margin-top: 4rem;">
+  <div class="container" style="margin-top: 4rem;">
+    <h2 style="color: #2c84fa; font-size: 1.75rem;">Ask UNI ATLAS</h2>
+    <p style="color: #ccc;">Type any question — like “What are Gen Z's top going-out preferences?”</p>
+    <input id="atlasQuery" type="text" placeholder="Ask a question..." 
+           style="width: 100%; max-width: 600px; padding: 1rem; font-size: 1rem; border-radius: 8px; border: none; margin-top: 1rem;">
+    <button onclick="showAtlasResponse()" class="btn-primary" style="margin-top: 1rem;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Search Icon"> Ask Atlas
+    </button>
+    <div id="atlasResponse" style="margin-top: 2rem; font-size: 1rem; color: #ccc; display: none;"></div>
+  </div>
+  <style>
+  .chatbox {
+    background-color: #111;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(44, 132, 250, 0.2);
+  }
+  .bubble {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    max-width: 85%;
+    line-height: 1.4;
+  }
+  .user {
+    background-color: #2c84fa;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+  }
+  .ai {
+    background-color: #1a1a1a;
+    color: #ccc;
+    margin-right: auto;
+    text-align: left;
+  }
+  .prompt-suggestions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .prompt-suggestions button {
+    background-color: #2c84fa;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  .prompt-suggestions button:hover {
+    opacity: 0.85;
+  }
+</style>
+
+<div class="chatbox" id="chatbox">
+  <!-- dynamic chat bubbles get inserted here -->
+</div>
+
+<div class="prompt-suggestions">
+  <button onclick="askAtlas('Top 3 nightlife trends in DC')">Top 3 nightlife trends in DC</button>
+  <button onclick="askAtlas('Favorite artists among DMV Gen Z')">Favorite artists among DMV Gen Z</button>
+  <button onclick="askAtlas('How to reach students on Thursdays')">How to reach students on Thursdays</button>
+</div>
+
+<script>
+  function appendBubble(text, sender) {
+    const chatbox = document.getElementById('chatbox');
+    const div = document.createElement('div');
+    div.className = 'bubble ' + sender;
+    div.textContent = text;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+
+  async function askAtlas(promptText) {
+    if (!promptText) return;
+
+    appendBubble(promptText, 'user');
+    appendBubble('Thinking...', 'ai');
+
+    const res = await fetch('https://uniatlasbta3.onrender.com/query-atlas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: promptText })
+    });
+
+    const data = await res.json();
+    const aiBubbles = document.querySelectorAll('.bubble.ai');
+    const lastBubble = aiBubbles[aiBubbles.length - 1];
+    lastBubble.textContent = '';
+    typeWriter(data.reply, lastBubble);
+  }
+
+  function typeWriter(text, element, i = 0) {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      setTimeout(() => typeWriter(text, element, i + 1), 12);
+    }
+  }
+
+  async function showAtlasResponse() {
+    const input = document.getElementById('atlasQuery').value.trim();
+    const isLoggedIn = localStorage.getItem('uniUserLoggedIn');
+    if (!isLoggedIn) {
+      alert('Please create an account or log in to use UNI Atlas.');
+      return;
+    }
+    if (!input) return;
+    askAtlas(input);
+    document.getElementById('atlasQuery').value = '';
+  }
+</script>
+      
+    </div>
+
+<div class="container" style="margin-top: 4rem;">
+  <h2 style="color: #2c84fa; font-size: 1.75rem;">Set Up an Inquiry Request</h2>
+  <p style="color: #ccc; font-size: 1.125rem; max-width: 700px; margin: 0 auto 2rem;">Want to work with UNI or learn more about our enterprise offerings? Click below to set up a custom inquiry.</p>
+  <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" class="btn-primary" style="background-color: #2c84fa; background-image: none;">Submit Inquiry</a>
+</div>
+
+<div class="container" style="margin-top: 2rem;">
+    <h2 style="color: #2c84fa; font-size: 1.75rem;">Trusted by innovators like</h2>
+    <div class="trusted-logos" style="gap: 2.5rem;">
+      <img src="https://i.imgur.com/CWr2lfz.png" alt="New Partner Logo" style="height: 55px;">
+      <img src="https://i.imgur.com/bbMAb4q.png" alt="Live Nation" style="height: 40px;">
+      
+      <img src="https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/e/AmazonStores/ATVPDKIKX0DER/6a9209e26ff2d70ea27751701da25a61.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.png" alt="Amazon" style="height: 40px;">
+      <img src="https://i.imgur.com/11lWIdv.png" alt="Spotify" style="height: 40px;">
+    </div>
+  </div>
+
+<footer style="background-color: #2c84fa; padding: 2rem 1rem; text-align: center; color: #ccc; font-size: 0.9rem;">
+  <p>For business inquiries, email us at <a href="mailto:bizinquiries@gouni.co" style="color: #2c84fa; text-decoration: none;">bizinquiries@gouni.co</a></p>
+  <p>© 2025 UNI Technologies. All rights reserved.</p>
+</footer>
 </body>
 </html>
