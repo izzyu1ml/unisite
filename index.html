@@ -1,321 +1,682 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob:;">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNI Enterprise | Data Distribution & Insights</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0d0d;
-      color: #fff;
-    }
-    .container {
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    h1 {
-      font-size: 3rem;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.125rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #ccc;
-    }
-    .btn-primary {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 999px;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: opacity 0.2s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .btn-primary:hover {
-      opacity: 0.85;
-    }
-    .btn-primary img {
-      width: 20px;
-      height: 20px;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 4rem;
-      gap: 2rem;
-    }
-    .feature-card {
-      background-color: #1a1a1a;
-      padding: 2rem;
-      border-radius: 1rem;
-      width: 300px;
-      text-align: left;
-      box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);
-    }
-    .feature-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .feature-card h3 {
-      font-size: 1.25rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-    .feature-card p {
-      color: #aaa;
-      font-size: 1rem;
-    }
-    .highlight {
-      color: #2c84fa;
-      font-weight: bold;
-    }
-      .trusted-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .trusted-logos img {
-      height: 40px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: all 0.3s ease-in-out;
-    }
-    .trusted-logos img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
-      .hero-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval' https://generativelanguage.googleapis.com; style-src * 'unsafe-inline'; img-src * data: blob: https://placehold.co https://i.imgur.com https://images.firstpost.com https://m.media-amazon.com; connect-src * https://generativelanguage.googleapis.com;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UNI Enterprise | Data Distribution & Insights</title>
+<style>
+:root {
+    --primary-color: #2c84fa;
+    --primary-gradient-end: #1c6fde; 
+    --dark-bg: #0d0d0d; 
+    --section-bg-simple-feature: #101113; /* Background for the simple feature blocks */
+    --card-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #ccc; 
+    --text-muted: #aaa;
+    --border-color: #2a2a2e; 
+    --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1); 
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar Styling */
+body::-webkit-scrollbar { width: 10px; }
+body::-webkit-scrollbar-track { background: var(--dark-bg); }
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: 2px solid var(--dark-bg);
+}
+body::-webkit-scrollbar-thumb:hover { background-color: #1c6fde; }
+
+
+.container {
+    text-align: center;
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 { 
+    font-size: 3.2rem;
+    color: var(--primary-color); 
+    background: none;
+    -webkit-text-fill-color: initial;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    overflow: hidden; 
+}
+h1.animated-headline span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px) rotate(5deg);
+    animation: revealLetter 0.8s var(--ease-out-cubic) forwards;
+}
+
+@keyframes revealLetter {
+    to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+
+h2 { 
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+p { 
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+.btn-primary { 
+    background: linear-gradient(to right, var(--primary-color), var(--primary-gradient-end));
+    padding: 0.9rem 2.3rem; 
+    border: none;
+    border-radius: 999px; 
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-position 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    box-shadow: 0 5px 18px rgba(44, 132, 250, 0.25); 
+    background-size: 200% auto;
+}
+.btn-primary:hover {
+    background-position: right center;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 7px 22px rgba(44, 132, 250, 0.35); 
+}
+.btn-primary.hero-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+.btn-primary img { 
+    width: 20px;
+    height: 20px;
+}
+
+/* New Feature Row for 2-column layout */
+.feature-row {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem; 
+    margin-top: 4rem;
+    align-items: stretch; 
+}
+
+/* Simple Feature Container Style (Hero Image, Title, Paragraph, Button) - Adjusted for Vertical Shape */
+.simple-feature-section {
+    background-color: var(--section-bg-simple-feature);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem; /* Increased vertical padding */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    flex: 1 1 calc(50% - 2rem); /* Try to keep two per row, adjust if needed */
+    max-width: 48%; /* Ensure they don't get too wide */
+    min-width: 300px; 
+    box-sizing: border-box;
+}
+.feature-row .simple-feature-section {
+     margin-top: 0; 
+}
+.simple-feature-section.standalone {
+    margin: 4rem auto 0 auto; /* Center standalone */
+    max-width: 500px; /* Max width for standalone for vertical feel */
+    flex-basis: auto; /* Let it take its natural width up to max-width */
+}
+
+
+.simple-feature-section .feature-hero-image {
+    width: 100%;
+    height: 320px; /* Increased height for more vertical rectangle */
+    object-fit: cover; 
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem; /* Adjusted margin for new order */
+    margin-top: 1rem; /* Added margin above image */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
+}
+.simple-feature-section h3 { 
+    font-size: 1.9rem; /* Slightly larger title */
+    color: var(--text-primary);
+    margin-bottom: 1rem; 
+}
+.simple-feature-section p { 
+    font-size: 1rem; 
+    color: var(--text-secondary);
+    max-width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; 
+    line-height: 1.65;
+    flex-grow: 1; 
+}
+.simple-feature-section .btn-primary {
+    margin-top: auto; 
+    padding: 0.8rem 2rem; 
+    font-size: 0.95rem; 
+}
+
+
+/* Trusted By Section */
+.trusted-by-section {
+    padding: 5rem 1rem;
+    background-color: var(--dark-bg); 
+    margin-top: 5rem;
+}
+.trusted-by-section h2 { 
+    color: var(--text-secondary); font-weight: 500; font-size: 1.8rem; margin-bottom: 3.5rem; 
+}
+.trusted-logos-container {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3.5rem 4.5rem;
+}
+.trusted-logos-container img {
+    height: 56px; /* Default height for most logos */
+    max-width: 187px; 
+    filter: grayscale(100%) brightness(0.8) contrast(1.2); opacity: 0.65;
+    transition: filter 0.4s var(--ease-out-cubic), opacity 0.4s var(--ease-out-cubic), transform 0.3s var(--ease-out-cubic);
+}
+.trusted-logos-container img:hover { filter: grayscale(0%) brightness(1) contrast(1); opacity: 1; transform: scale(1.1); }
+.trusted-logos-container.is-visible img { opacity: 0; transform: translateY(20px); }
+
+/* Specific style for the prominent logo slot */
+#logo-prominent-partner { 
+    height: 88px !important; 
+    max-width: 275px !important; 
+}
+#logo-openai-custom { 
+    height: 70px !important; 
+    max-width: 220px !important; 
+}
+
+
+.hero-content { 
+    max-width: 750px; 
+    margin: 0 auto; 
+    text-align: center; 
+    padding-top: 90px; 
+    transition: transform 0.1s ease-out; 
+    will-change: transform; 
+}
+header {
+    position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;
+    background-color: rgba(10, 10, 12, 0.6); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+header img.logo { height: 40px; filter: brightness(0) invert(1); }
+header nav { display: flex; align-items: center; gap: 1.5rem; }
+header nav a {
+    color: white; text-decoration: none; font-weight: 500;
+    transition: color 0.3s var(--ease-out-cubic), transform 0.2s var(--ease-out-cubic); position: relative;
+}
+header nav a:hover { color: var(--primary-color); transform: translateY(-2px); }
+header nav a::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%;
+    transform: translateX(-50%); background-color: var(--primary-color); transition: width 0.3s var(--ease-out-cubic);
+}
+header nav a:hover::after { width: 100%; }
+#queryCounterDisplay {
+    color: var(--primary-color); font-size: 0.9rem; font-weight: 500; margin-left: 1.5rem;
+    padding: 0.3rem 0.7rem; background-color: rgba(44, 132, 250, 0.1);
+    border: 1px solid rgba(44, 132, 250, 0.3); border-radius: 999px; display: none;
+    transition: opacity 0.3s var(--ease-out-cubic);
+}
+
+/* Modal Styles */
+.modal {
+    display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.88); z-index: 2000; justify-content: center; align-items: center;
+    padding: 1rem; box-sizing: border-box; opacity: 0; visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.3s var(--ease-out-cubic), visibility 0s linear 0.3s, transform 0.3s var(--ease-out-cubic);
+}
+.modal.is-visible {
+    opacity: 1; visibility: visible; transform: scale(1);
+    transition: opacity 0.3s var(--ease-out-cubic), visibility 0s linear 0s, transform 0.3s var(--ease-out-cubic);
+}
+.modal-content {
+    background: var(--card-bg); padding: 2.5rem; border-radius: 1rem; text-align: center;
+    max-width: 450px; width: 95%; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    transform: translateY(0);
+}
+/* Atlas Query Section */
+#atlasQuery { background-color: #111; padding: 3rem 1.5rem; border-radius: 1rem; margin-top: 4rem; }
+#atlasQuery h2 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; }
+#atlasQuery p.atlas-subtext { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-bottom: 1.5rem; }
+.example-query-buttons {
+    margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;
+}
+.btn-example-query {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-gradient-end));
+    background-size: 200% auto; color: white; font-weight: bold; padding: 0.6rem 1.2rem;
+    border: none; border-radius: 999px; font-size: 0.9rem; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(44, 132, 250, 0.15);
+    transition: background-position 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-example-query:hover {
+    background-position: right center; color: var(--text-primary);
+    transform: translateY(-2px) scale(1.02); box-shadow: 0 4px 12px rgba(44, 132, 250, 0.25);
+}
+#atlasQueryInput {
+    width: 100%; max-width: 600px; padding: 1.1rem; font-size: 1rem; border-radius: 8px;
+    border: 1px solid #333; margin-top: 0; background-color: #222; color: var(--text-primary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#atlasQueryInput::placeholder { color: #777; }
+#atlasQueryInput:focus {
+    outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(44, 132, 250, 0.3);
+}
+#atlasQuery .btn-primary { margin-top: 1.5rem; }
+
+#atlasResponse {
+    margin-top: 2rem; font-size: 1rem; color: var(--text-secondary); text-align: left;
+    background-color: var(--card-bg); padding: 1.5rem; border-radius: 0.5rem;
+    border: 1px solid rgba(44, 132, 250, 0.2); display: none; max-width: 600px;
+    margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+#atlasResponse strong { color: var(--primary-color); display: block; margin-bottom: 0.5rem; }
+#loadingIndicator { display: none; margin-top: 1rem; color: var(--primary-color); font-size: 1.1rem; }
+.pulsing-dots span {
+    display: inline-block; width: 10px; height: 10px; margin: 0 3px;
+    background-color: var(--primary-color); border-radius: 50%;
+    animation: pulse 1.4s infinite var(--ease-out-cubic) both; 
+}
+.pulsing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.pulsing-dots span:nth-child(2) { animation-delay: -0.16s; }
+@keyframes pulse { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
+
+/* Scroll Animation Base Styles */
+.scroll-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s var(--ease-out-cubic), transform 0.6s var(--ease-out-cubic); }
+.scroll-animate.is-visible { opacity: 1; transform: translateY(0); }
+
+footer {
+    background-color: #111; padding: 2.5rem 1rem; text-align: center; color: #888;
+    font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid #222;
+}
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    header nav { gap: 1rem; }
+    #queryCounterDisplay { margin-left: 1rem; font-size: 0.8rem; padding: 0.2rem 0.5rem;}
+    .simple-feature-section { padding: 2rem 1.5rem; flex-basis: calc(50% - 1rem); /* Ensure gap is respected */ }
+    .simple-feature-section h3 { font-size: 1.6rem; } 
+    .simple-feature-section .feature-hero-image { max-height: 280px; } 
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.75rem; } 
+    .simple-feature-section h3 { font-size: 1.5rem; } 
+    #atlasQuery h2 { font-size: 1.75rem; }
+    .hero-content { padding-top: 120px; }
+    header { padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; }
+    header img.logo { margin-bottom: 0.5rem; }
+    header nav { width: 100%; justify-content: space-between; }
+     #queryCounterDisplay { margin-top: 0.5rem; align-self: flex-start; margin-left: 0; }
+    .feature-row { flex-direction: column; } /* Stack the two features on mobile */
+    .feature-row .simple-feature-section { margin-top: 2rem; flex-basis: auto; max-width: 100%;} 
+    .simple-feature-section.standalone { margin-top: 2rem; max-width: 100%;}
+    .simple-feature-section .feature-hero-image { max-height: 220px; }
+}
+@media (max-width: 480px) {
+    header nav { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    header nav a { width: 100%; text-align: left; }
+    header nav a::after { left: 0; transform: translateX(0); }
+    #queryCounterDisplay { align-self: flex-start; }
+    .container { padding: 2rem 1rem; } 
+    #atlasQuery { padding: 1.5rem 1rem; }
+    .simple-feature-section { padding: 1.5rem 1rem; margin-top: 2.5rem; } 
+    .simple-feature-section h3 { font-size: 1.4rem; } 
+    .simple-feature-section p { font-size: 0.9rem; }
+    .simple-feature-section .feature-hero-image { max-height: 180px; margin-bottom: 1.5rem; }
+    .simple-feature-section .btn-primary { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
+    .feature-row { gap: 1.5rem; } 
+}
+
+</style>
 </head>
 <body>
-  <header style="position: absolute; top: 20px; left: 20px; z-index: 10; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 2rem; box-sizing: border-box;">
-    <img src="https://i.imgur.com/s8XQvEv.png" alt="UNI Logo" style="height: 40px; filter: brightness(0) invert(1);">
-    <nav style="display: flex; gap: 2rem;">
-      <a href="#atlasQuery" style="color: white; text-decoration: none; font-weight: 500;">Try it Out</a>
-      <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" style="color: white; text-decoration: none; font-weight: 500;">Sign Up</a>
-      <a href="#how-it-works" style="color: white; text-decoration: none; font-weight: 500;">How it works</a>
+
+<header>
+    <img src="https://i.imgur.com/s8XQvEv.png" alt="UNI Logo" class="logo">
+    <nav>
+        <a href="#atlasQuery">Try it Out</a>
+        <a href="https://form.typeform.com/to/DdElG5zV" target="_blank">Sign Up</a>
+        <a href="#how-it-works">How it works</a>
+        <span id="queryCounterDisplay">Free Queries Left: 5/5</span>
     </nav>
-  </header>
-  <div class="container">
+</header>
+
+<div class="container">
     <div class="hero-content">
-      <h1 style="color: #2c84fa; background: none; -webkit-text-fill-color: initial;">Where Culture Becomes Data</h1>
-      <h2 style="color: #ffffff;">Real-Time Social Insights On-Demand.</h2>
+        <h1 id="mainHeadline" class="scroll-animate">Where Culture Becomes Data</h1> 
+        <h2 style="color: var(--text-primary);" class="scroll-animate">Real-Time Social Insights On-Demand.</h2>
     </div>
-    <p>Leverage real-time behavioral intelligence to supercharge your outreach, refine your targeting, and fuel your next breakout campaign.</p>
-    <button class="btn-primary" style="background-color: #2c84fa; background-image: none;">Get started</button>
+    <p class="scroll-animate">Leverage real-time behavioral intelligence to supercharge your outreach, refine your targeting, and fuel your next breakout campaign.</p>
+    <a href="heatmap_insights.html" class="btn-primary hero-btn scroll-animate">Get started</a>
 
-    <div class="features">
-      <div class="feature-card">
-        <img src="https://i.imgur.com/AOknZdH.jpeg" alt="Plug-and-Play Dashboard">
-        <h3>Plug-and-Play Dashboards</h3>
-        <p>Visualize UNI’s real-world social data in real time. Know who’s out, where they go, and what they love—all from a sleek, prebuilt dashboard.</p>
-      </div>
-      <div class="feature-card">
-        <img src="https://i.imgur.com/yK5k93R.png" alt="Data Access Icon" style="width: 90%; height: auto; border-radius: 0.5rem; margin: 0 auto 1rem; display: block;">
-        <h3>First-Party Data Access</h3>
-        <p>From favorite artists to outing frequency, tap into granular interest-level data captured directly from user behavior, not assumptions.</p>
-      </div>
-      <div class="feature-card">
-        <img src="https://images.firstpost.com/uploads/2025/01/In-US-TikTok-Ban-Meta-and-Google-will-emerge-as-true-winners-as-they-divvy-up-ad-revenue-2025-01-de3996b8d257d4d7e5cf56ba96272c35-1200x675.jpg?im=FitAndFill=(1200,675)" alt="Audience Sync" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;">
+    <section class="trusted-by-section scroll-animate">
+        <div class="container" style="padding-top:0; padding-bottom:0;">
+            <h2>Trusted by innovators like</h2>
+            <div class="trusted-logos-container">
+                <img src="https://i.imgur.com/8NqJx5D.png" alt="WUSA9 Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x56/0d0d0d/cccccc?text=WUSA9';">
+                <img id="logo-prominent-partner" src="https://i.imgur.com/Lg1Uskv.png" alt="Partner Logo" onerror="this.onerror=null;this.src='https://placehold.co/220x88/0d0d0d/cccccc?text=Partner';">
+                <img id="logo-openai-custom" src="https://i.imgur.com/WvUuf0j.png" alt="Interscope Records Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x70/0d0d0d/cccccc?text=Interscope';">
+                <img src="https://i.imgur.com/11lWIdv.png" alt="New Partner Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x56/0d0d0d/cccccc?text=New+Partner';">
+            </div>
+        </div>
+    </section>
+
+    <div id="atlasQuery" class="container scroll-animate">
+        <h2>Ask UNI ATLAS</h2>
+        <p class="atlas-subtext">Try an example or type your own question below.</p>
+        <div class="example-query-buttons">
+            <button class="btn-example-query" onclick="showExampleInsight(exampleQueries[0].query, exampleQueries[0].insight)">What are Gen Z's top going-out preferences?</button>
+            <button class="btn-example-query" onclick="showExampleInsight(exampleQueries[1].query, exampleQueries[1].insight)">Popular weekend activities for young professionals?</button>
+            <button class="btn-example-query" onclick="showExampleInsight(exampleQueries[2].query, exampleQueries[2].insight)">Emerging nightlife trends in urban areas?</button>
+        </div>
+        <input id="atlasQueryInput" type="text" placeholder="Ask a question or try an example above...">
+        <div id="loadingIndicator"><div class="pulsing-dots"><span></span><span></span><span></span></div></div>
+        <button onclick="handleAtlasQuery()" class="btn-primary">
+            <img src="https://i.imgur.com/s8XQvEv.png" alt="UNI Icon" style="filter: brightness(0) invert(1); width:20px; height:20px;"> Ask Atlas
+        </button>
+        <div id="atlasResponse"></div>
+    </div>
+
+    <div id="how-it-works" class="scroll-animate" style="margin-top: 4rem; padding-top: 60px;">
+        <h2 style="color: var(--primary-color); font-size: 1.75rem;">How It Works</h2>
+        <img src="https://i.imgur.com/hd3R7U5.png" alt="How UNI Works Diagram" style="max-width: 85%; border-radius: 1rem; box-shadow: 0 0 20px rgba(44, 132, 250, 0.3); margin-top: 1.5rem; margin-bottom: 1.5rem;" class="scroll-animate" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111111/cccccc?text=How+UNI+Works';">
+        <p style="max-width: 800px; margin: 0 auto 2rem; font-size: 1.125rem;">UNI is the #1 app for real-life discovery, helping users uncover everything happening around them through personalized, dynamic maps powered by the world’s biggest event and location databases. Users create detailed profiles based on their favorite artists, go-to spots, college, and lifestyle preferences. Every RSVP, check-in, and interaction is encrypted and converted into real-time behavioral insights—fueling smarter recommendations for users and powering UNI’s unparalleled data solutions.</p>
+    </div>
+    
+    <div class="feature-row">
+        <section class="simple-feature-section scroll-animate">
+            <h3>Connective Advertising</h3>
+            <img src="https://i.imgur.com/THmjlAq.png" 
+                 alt="Connective Advertising" class="feature-hero-image"
+                 onerror="this.onerror=null;this.src='https://placehold.co/500x320/101113/cccccc?text=Image+Error';">
+            <p>With UNI, your brand appears at the center of discovery: on maps, in curated feeds, and inside reward campaigns, all customized for your exact audience.</p>
+            <button class="btn-primary">Explore Advertising</button>
+        </section>
+
+        <section class="simple-feature-section scroll-animate">
+            <h3>Insights</h3>
+            <img src="https://i.imgur.com/Rsg2omo.png" 
+                 alt="UNI Insights Visual" class="feature-hero-image"
+                 onerror="this.onerror=null;this.src='https://placehold.co/500x320/101113/cccccc?text=Insights+Image+Error';">
+            <p>Harness the behavioral pulse of the culture. Real-time dashboards powered by our AI show you the when, where, and why behind your audience.</p>
+            <button class="btn-primary">Discover Insights</button>
+        </section>
+    </div>
+
+    <section class="simple-feature-section scroll-animate standalone">
         <h3>Audience Sync</h3>
+        <img src="https://i.imgur.com/PgBi8c6.png" 
+             alt="Audience Sync" class="feature-hero-image"
+             onerror="this.onerror=null;this.src='https://placehold.co/700x320/101113/cccccc?text=Image+Error';">
         <p>Export hyper-specific segments into Meta, TikTok, or email pipelines for retargeting that feels native, not noisy.</p>
-      </div>
-    </div>
+        <button class="btn-primary">Sync Audiences</button>
+    </section>
 
-    <div class="container" id="how-it-works" style="margin-top: 4rem;">
-  <h2 style="color: #2c84fa; font-size: 1.75rem;">How It Works</h2>
-  <p style="color: #ccc; max-width: 800px; margin: 0 auto 2rem; font-size: 1.125rem;">UNI is the #1 app for real-life discovery, helping users uncover everything happening around them through personalized, dynamic maps powered by the world’s biggest event and location databases. Users create detailed profiles based on their favorite artists, go-to spots, college, and lifestyle preferences. Every RSVP, check-in, and interaction is encrypted and converted into real-time behavioral insights—fueling smarter recommendations for users and powering UNI’s unparalleled data solutions.</p>
-  <img src="https://i.imgur.com/hd3R7U5.png" alt="How UNI Works Diagram" style="max-width: 100%; border-radius: 1rem; box-shadow: 0 0 20px rgba(44, 132, 250, 0.3);">
+    <div class="scroll-animate" style="margin-top: 4rem;">
+        <h2 style="color: var(--primary-color); font-size: 1.75rem;">Set Up an Inquiry Request</h2>
+        <p style="color: var(--text-secondary); font-size: 1.125rem; max-width: 700px; margin: 0 auto 2rem;">Want to work with UNI or learn more about our enterprise offerings? Click below to set up a custom inquiry.</p>
+        <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" class="btn-primary scroll-animate" style="background-color: var(--primary-color); background-image: none;">Submit Inquiry</a>
+    </div>
 </div>
 
-<div class="carousel-section" style="margin-top: 4rem;">
-    <h2 style="color: #2c84fa; text-align: center; font-size: 1.75rem;">Intricate & Intuitive Solutions</h2>
-    <div class="carousel" style="display: flex; overflow-x: auto; gap: 2rem; padding: 2rem 0; scroll-snap-type: x mandatory;">
-      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
-        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Insights</h3>
-        <p style="color: #aaa;">Harness the behavioral pulse of the culture. Real-time dashboards powered by our AI show you the when, where, and why behind your audience.</p>
-      </div>
-      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
-        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Connective Advertising</h3>
-        <p style="color: #aaa;">Deliver campaigns that feel like community. Our AI syncs your brand message with real moments and hyper-relevant local trends.</p>
-      </div>
-      <div class="carousel-card" style="min-width: 300px; flex: 0 0 auto; background-color: #1a1a1a; border-radius: 1rem; padding: 2rem; scroll-snap-align: start; box-shadow: 0 0 20px rgba(47, 128, 237, 0.1);">
-        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem;">Atlas</h3>
-        <p style="color: #aaa;">Let UNI Atlas generate strategic reports for you. From nightlife trends to interest-based audience clusters—automated, exportable, and beautiful.</p>
-      </div>
+<footer>
+    <p>For business inquiries, email us at <a href="mailto:bizinquiries@gouni.co">bizinquiries@gouni.co</a></p>
+    <p>© 2025 UNI Technologies. All rights reserved.</p>
+</footer>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModal('loginModal')">&times;</button>
+        <h2>Sign Up to Access Atlas</h2>
+        <p>A few details to get you started with UNI Atlas insights. You'll get 5 free queries!</p>
+        <input type="text" id="userName" placeholder="Your Name">
+        <input type="email" id="userEmail" placeholder="Email">
+        <button onclick="completeLogin()" class="btn-primary" style="background-color:var(--primary-color); background-image:none; width:100%;">Get Started</button>
     </div>
-  </div>
-
-<div class="container" style="margin-top: 4rem;">
-  <div class="container" style="margin-top: 4rem;">
-    <h2 style="color: #2c84fa; font-size: 1.75rem;">Ask UNI ATLAS</h2>
-    <p style="color: #ccc;">Type any question — like “What are Gen Z's top going-out preferences?”</p>
-    <input id="atlasQuery" type="text" placeholder="Ask a question..." 
-           style="width: 100%; max-width: 600px; padding: 1rem; font-size: 1rem; border-radius: 8px; border: none; margin-top: 1rem;">
-    <button onclick="showAtlasResponse()" class="btn-primary" style="margin-top: 1rem;">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Search Icon"> Ask Atlas
-    </button>
-    <div id="atlasResponse" style="margin-top: 2rem; font-size: 1rem; color: #ccc; display: none;"></div>
-  </div>
-  <style>
-  .chatbox {
-    background-color: #111;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 10px rgba(44, 132, 250, 0.2);
-  }
-  .bubble {
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 0.5rem 0;
-    max-width: 85%;
-    line-height: 1.4;
-  }
-  .user {
-    background-color: #2c84fa;
-    color: white;
-    margin-left: auto;
-    text-align: right;
-  }
-  .ai {
-    background-color: #1a1a1a;
-    color: #ccc;
-    margin-right: auto;
-    text-align: left;
-  }
-  .prompt-suggestions {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .prompt-suggestions button {
-    background-color: #2c84fa;
-    color: white;
-    border: none;
-    border-radius: 999px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 0.875rem;
-  }
-  .prompt-suggestions button:hover {
-    opacity: 0.85;
-  }
-</style>
-
-<div class="chatbox" id="chatbox">
-  <!-- dynamic chat bubbles get inserted here -->
 </div>
 
-<div class="prompt-suggestions">
-  <button onclick="askAtlas('Top 3 nightlife trends in DC')">Top 3 nightlife trends in DC</button>
-  <button onclick="askAtlas('Favorite artists among DMV Gen Z')">Favorite artists among DMV Gen Z</button>
-  <button onclick="askAtlas('How to reach students on Thursdays')">How to reach students on Thursdays</button>
+<div id="upgradeModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModal('upgradeModal')">&times;</button>
+        <h2>You've used your 5 free queries!</h2>
+        <p>To continue using UNI Atlas and unlock unlimited searches for real-time insight reports, please contact our sales team to discuss plan options.</p>
+        <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" class="btn-primary" style="background-color:var(--primary-color); background-image:none; width:100%; margin-bottom: 0.5rem; display: block; box-sizing: border-box;">Contact Sales</a>
+        <button onclick="closeModal('upgradeModal')" class="btn-primary" style="background-color:transparent; border: 1px solid var(--primary-color); color: var(--primary-color); width:100%;">Maybe Later</button>
+    </div>
 </div>
 
 <script>
-  function appendBubble(text, sender) {
-    const chatbox = document.getElementById('chatbox');
-    const div = document.createElement('div');
-    div.className = 'bubble ' + sender;
-    div.textContent = text;
-    chatbox.appendChild(div);
-    chatbox.scrollTop = chatbox.scrollHeight;
-  }
+    // --- State Variables ---
+    let isLoggedIn = false;
+    let freeQueriesUsed = 0;
+    const queryLimit = 5;
 
-  async function askAtlas(promptText) {
-    if (!promptText) return;
+    // --- DOM Elements ---
+    const loginModalEl = document.getElementById('loginModal');
+    const upgradeModalEl = document.getElementById('upgradeModal');
+    const atlasQueryInputEl = document.getElementById('atlasQueryInput');
+    const atlasResponseDivEl = document.getElementById('atlasResponse');
+    const loadingIndicatorEl = document.getElementById('loadingIndicator');
+    const queryCounterDisplayEl = document.getElementById('queryCounterDisplay');
+    const mainHeadlineEl = document.getElementById('mainHeadline');
 
-    appendBubble(promptText, 'user');
-    appendBubble('Thinking...', 'ai');
+    const exampleQueries = [
+        { query: "What are Gen Z's top going-out preferences?", insight: "Gen Z is increasingly drawn to interactive, social-first venues like immersive popups, live DJ cafes, and content-worthy locations that offer unique experiences. They prioritize authenticity and shareable moments." },
+        { query: "Popular weekend activities for young professionals?", insight: "Young professionals often seek a balance of social engagement and relaxation. Popular activities include brunch spots, boutique fitness classes, local markets, and live music events that offer networking or unique experiences." },
+        { query: "Emerging nightlife trends in urban areas?", insight: "Key nightlife trends include the rise of themed bars, speakeasies with craft cocktails, venues offering competitive socializing (e.g., axe throwing, retro arcade games), and a growing demand for late-night cafes and non-alcoholic social spaces." }
+    ];
 
-    const res = await fetch('https://uniatlasbta3.onrender.com/query-atlas', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: promptText })
+    function updateQueryCounterDisplay() {
+        if (isLoggedIn) {
+            queryCounterDisplayEl.textContent = `Free Queries Left: ${queryLimit - freeQueriesUsed}/${queryLimit}`;
+            queryCounterDisplayEl.style.display = 'inline-block';
+            queryCounterDisplayEl.style.opacity = '1';
+        } else {
+            queryCounterDisplayEl.style.opacity = '0';
+            setTimeout(() => {
+                 if(!isLoggedIn) queryCounterDisplayEl.style.display = 'none';
+            }, 300);
+        }
+    }
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            requestAnimationFrame(() => {
+                 modal.classList.add('is-visible');
+            });
+        }
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('is-visible');
+        }
+    }
+
+    function completeLogin() {
+        isLoggedIn = true;
+        freeQueriesUsed = 0;
+        updateQueryCounterDisplay();
+        closeModal('loginModal');
+        if(atlasQueryInputEl.value.trim() && !exampleQueries.some(ex => ex.query === atlasQueryInputEl.value.trim())){
+            handleAtlasQuery();
+        }
+    }
+
+    function showExampleInsight(queryText, insightText) {
+        atlasQueryInputEl.value = queryText;
+        atlasResponseDivEl.innerHTML = `<strong>UNI Atlas Insight:</strong> ${insightText}`;
+        atlasResponseDivEl.style.display = 'block';
+        loadingIndicatorEl.style.display = 'none';
+        atlasResponseDivEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    async function handleAtlasQuery() {
+        const userQuery = atlasQueryInputEl.value.trim();
+        if (!userQuery) {
+            atlasResponseDivEl.style.display = 'block';
+            atlasResponseDivEl.innerHTML = '<strong>Insight:</strong> Please enter a question to ask Atlas, or try an example.';
+            loadingIndicatorEl.style.display = 'none';
+            return;
+        }
+        if (exampleQueries.some(ex => ex.query === userQuery)) {
+            const example = exampleQueries.find(ex => ex.query === userQuery);
+            if (example) { showExampleInsight(example.query, example.insight); return; }
+        }
+        if (!isLoggedIn) { openModal('loginModal'); return; }
+        if (freeQueriesUsed >= queryLimit) { openModal('upgradeModal'); loadingIndicatorEl.style.display = 'none'; return; }
+
+        loadingIndicatorEl.style.display = 'block';
+        atlasResponseDivEl.style.display = 'none';
+
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const prompt = `Directly provide a concise insight as UNI Atlas for the query: "${userQuery}". Focus on social behaviors, preferences, or cultural trends. Do not include any conversational preamble or leading phrases like "Okay, here's the insight:". Begin the response with the insight itself.`;
+        const payload = { contents: [{ parts: [{ text: prompt }] }] };
+
+        try {
+            const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(`API error: ${response.status} ${response.statusText}. Details: ${JSON.stringify(errorData.error?.message || errorData)}`);
+            }
+            const result = await response.json();
+            let generatedText = "Sorry, I couldn't generate an insight for that query right now. Please try a different question.";
+            if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                generatedText = result.candidates[0].content.parts[0].text.replace(/\*/g, '').trim();
+            }
+            atlasResponseDivEl.style.display = 'block';
+            atlasResponseDivEl.innerHTML = `<strong>UNI Atlas Insight:</strong> ${generatedText.replace(/\n/g, '<br>')}`;
+            freeQueriesUsed++;
+            updateQueryCounterDisplay();
+        } catch (error) {
+            console.error("Error fetching Atlas response from Gemini:", error);
+            atlasResponseDivEl.style.display = 'block';
+            atlasResponseDivEl.innerHTML = `<strong>Error:</strong> Could not retrieve insight. ${error.message}. Please try again later.`;
+        } finally {
+            loadingIndicatorEl.style.display = 'none';
+            atlasResponseDivEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    // Hero Headline Animation
+    function animateHeadline() {
+        if (!mainHeadlineEl) return;
+        const text = mainHeadlineEl.textContent;
+        mainHeadlineEl.innerHTML = ''; // Clear original text
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char; // Handle spaces
+            span.style.animationDelay = `${index * 0.05}s`;
+            mainHeadlineEl.appendChild(span);
+        });
+        mainHeadlineEl.classList.add('animated-headline');
+    }
+
+    // Hero Content Mouse Move Effect
+    const heroContentEl = document.querySelector('.hero-content');
+    function handleMouseMove(e) {
+        if (!heroContentEl) return;
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = heroContentEl;
+        const xRotation = ((clientY - (heroContentEl.offsetTop + offsetHeight / 2)) / offsetHeight) * 10; 
+        const yRotation = -((clientX - (heroContentEl.offsetLeft + offsetWidth / 2)) / offsetWidth) * 10; 
+        
+        heroContentEl.style.transform = `perspective(1000px) rotateX(${xRotation * 0.2}deg) rotateY(${yRotation * 0.2}deg) scale(1.01)`;
+    }
+    function resetTilt() {
+        if (heroContentEl) {
+            heroContentEl.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+        }
+    }
+    if (heroContentEl) {
+        document.addEventListener('mousemove', handleMouseMove);
+        heroContentEl.addEventListener('mouseleave', resetTilt);
+    }
+
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) { 
+            event.target.classList.remove('is-visible');
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        animateHeadline(); 
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        const trustedLogosContainer = document.querySelector('.trusted-logos-container');
+
+        const observerCallback = (entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    if (entry.target === trustedLogosContainer) {
+                        const logos = trustedLogosContainer.querySelectorAll('img'); 
+                        logos.forEach((logo, index) => {
+                            logo.style.transition = `opacity 0.4s var(--ease-out-cubic) ${index * 0.1 + 0.1}s, transform 0.4s var(--ease-out-cubic) ${index * 0.1 + 0.1}s`;
+                            logo.style.opacity = '1'; 
+                            logo.style.transform = 'translateY(0)';
+                        });
+                         observerInstance.unobserve(entry.target); 
+                    } else if (!entry.target.closest('.trusted-logos-container')) { 
+                        observerInstance.unobserve(entry.target); 
+                    }
+                }
+            });
+        };
+
+        if ("IntersectionObserver" in window) {
+            let observer = new IntersectionObserver(observerCallback, { threshold: 0.1 }); 
+            scrollElements.forEach(el => {
+                if (!el.closest('.trusted-logos-container img')) { 
+                    observer.observe(el);
+                }
+            });
+        } else { 
+            scrollElements.forEach((el, index) => {
+                setTimeout(() => el.classList.add('is-visible'), index * 100); 
+            });
+            if (trustedLogosContainer) { 
+                 const logos = trustedLogosContainer.querySelectorAll('img');
+                 logos.forEach((logo, index) => {
+                    setTimeout(() => {
+                        logo.style.opacity = '1';
+                        logo.style.transform = 'translateY(0)';
+                    }, 300 + index * 100); 
+                 });
+            }
+        }
+        updateQueryCounterDisplay(); 
     });
 
-    const data = await res.json();
-    const aiBubbles = document.querySelectorAll('.bubble.ai');
-    const lastBubble = aiBubbles[aiBubbles.length - 1];
-    lastBubble.textContent = '';
-    typeWriter(data.reply, lastBubble);
-  }
-
-  function typeWriter(text, element, i = 0) {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      setTimeout(() => typeWriter(text, element, i + 1), 12);
-    }
-  }
-
-  async function showAtlasResponse() {
-    const input = document.getElementById('atlasQuery').value.trim();
-    const isLoggedIn = localStorage.getItem('uniUserLoggedIn');
-    if (!isLoggedIn) {
-      alert('Please create an account or log in to use UNI Atlas.');
-      return;
-    }
-    if (!input) return;
-    askAtlas(input);
-    document.getElementById('atlasQuery').value = '';
-  }
 </script>
-      
-    </div>
-
-<div class="container" style="margin-top: 4rem;">
-  <h2 style="color: #2c84fa; font-size: 1.75rem;">Set Up an Inquiry Request</h2>
-  <p style="color: #ccc; font-size: 1.125rem; max-width: 700px; margin: 0 auto 2rem;">Want to work with UNI or learn more about our enterprise offerings? Click below to set up a custom inquiry.</p>
-  <a href="https://form.typeform.com/to/DdElG5zV" target="_blank" class="btn-primary" style="background-color: #2c84fa; background-image: none;">Submit Inquiry</a>
-</div>
-
-<div class="container" style="margin-top: 2rem;">
-    <h2 style="color: #2c84fa; font-size: 1.75rem;">Trusted by innovators like</h2>
-    <div class="trusted-logos" style="gap: 2.5rem;">
-      <img src="https://i.imgur.com/CWr2lfz.png" alt="New Partner Logo" style="height: 55px;">
-      <img src="https://i.imgur.com/bbMAb4q.png" alt="Live Nation" style="height: 40px;">
-      
-      <img src="https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/e/AmazonStores/ATVPDKIKX0DER/6a9209e26ff2d70ea27751701da25a61.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.png" alt="Amazon" style="height: 40px;">
-      <img src="https://i.imgur.com/11lWIdv.png" alt="Spotify" style="height: 40px;">
-    </div>
-  </div>
-
-<footer style="background-color: #2c84fa; padding: 2rem 1rem; text-align: center; color: #ccc; font-size: 0.9rem;">
-  <p>For business inquiries, email us at <a href="mailto:bizinquiries@gouni.co" style="color: #2c84fa; text-decoration: none;">bizinquiries@gouni.co</a></p>
-  <p>© 2025 UNI Technologies. All rights reserved.</p>
-</footer>
 </body>
 </html>
+
