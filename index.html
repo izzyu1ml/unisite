@@ -717,41 +717,113 @@ footer {
 
     <!-- HOW IT WORKS SECTION -->
 <!-- HOW IT WORKS SECTION -->
+<!-- HOW IT WORKS SECTION -->
 <section style="background: transparent; color: white; padding: 4rem 2rem; font-family: 'Inter', sans-serif;">
   <div style="max-width: 1200px; margin: auto; text-align: center;">
     <h2 style="font-size: 2.75rem; margin-bottom: 1rem; animation: fadeInDown 1s ease-out;">How It Works</h2>
     <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 3rem; animation: fadeInDown 1.3s ease-out;">
-      UNI turns real-life movement into real-time data. Here’s how our insight engine captures culture as it happens:
+      UNI is a self-sustaining ecosystem that on the consumer end, features a flagship social discovery platform built to unify the fragmented layers of real-world culture using real-time APIs and AI-driven personalization. By connecting users with the people, places, and events they align with most, every interaction powers our proprietary Social DNA Engine and unlocks rich enterprise intelligence solutions.
     </p>
 
-    <div style="display: flex; flex-direction: column; align-items: center; position: relative; animation: fadeInUp 1.5s ease-out;">
-      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px; margin-bottom: 3rem; position: relative;">
-        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 3.5rem;">
+      
+      <!-- Box 1 -->
+      <div class="how-box">
+        <div class="icon-pulse">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Behavioral Profiles</h3>
-        <p style="color: #94a3b8;">Users onboard with their interests, favorite artists, schools, go-to spots, and social energy — building a full lifestyle fingerprint.</p>
+        <h3>Behavioral Profiles</h3>
+        <p>Users onboard with their interests, favorite artists, schools, go-to spots, and social energy — building a full lifestyle fingerprint.</p>
         <div class="down-arrow"></div>
       </div>
 
-      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px; margin-bottom: 3rem; position: relative;">
-        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+      <!-- Box 2 -->
+      <div class="how-box">
+        <div class="icon-pulse">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M9 17l3-3 3 3"/><path d="M9 13h6"/></svg>
         </div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Live Map Signals</h3>
-        <p style="color: #94a3b8;">Every RSVP, swipe, check-in, and search gets encrypted and mapped — showing not just where users are, but what they’re craving.</p>
+        <h3>Live Map Signals</h3>
+        <p>Every RSVP, swipe, check-in, and search gets encrypted and mapped — showing not just where users are, but what they’re craving.</p>
         <div class="down-arrow"></div>
       </div>
 
-      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px;">
-        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+      <!-- Box 3 -->
+      <div class="how-box">
+        <div class="icon-pulse">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">UNI Atlas AI</h3>
-        <p style="color: #94a3b8;">Our proprietary intelligence engine distills these movements into cultural trend forecasts and hyperlocal targeting blueprints.</p>
+        <h3>UNI Atlas AI</h3>
+        <p>Our proprietary intelligence engine distills these movements into cultural trend forecasts and hyperlocal targeting blueprints.</p>
+        <div class="badge">SOC 2 Compliant</div>
       </div>
+
     </div>
   </div>
+</section>
+
+<style>
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(59,130,246, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(59,130,246, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(59,130,246, 0.3); }
+}
+
+.how-box {
+  background: rgba(0,0,0,0.6);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59,130,246,0.35);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.how-box h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.how-box p {
+  color: #94a3b8;
+}
+
+.icon-pulse {
+  font-size: 2.5rem;
+  color: #3b82f6;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-left: 3px solid #3b82f6;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.badge {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: #0f172a;
+  color: #60a5fa;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+</style>
 </section>
 
 <style>
@@ -904,7 +976,7 @@ footer {
   <a href="https://form.typeform.com/to/DdElG5zV"
      target="_blank"
      class="btn-primary scroll-animate"
-     style="background-color: var(--primary-color); background-image: none; display: inline-block;"
+     style="background-color: var(--primary-color); background-image: none; display: inline-block;">
      Submit Inquiry
   </a>
 </div>
