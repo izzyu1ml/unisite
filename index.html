@@ -715,11 +715,84 @@ footer {
         <div id="atlasResponse"></div>
     </div>
 
-    <div id="how-it-works" class="scroll-animate" style="margin-top: 4rem; padding-top: 60px; position: relative; z-index: 1;">
-        <h2 style="color: var(--primary-color); font-size: 1.75rem;">How It Works</h2>
-        <img src="https://i.imgur.com/hd3R7U5.png" alt="How UNI Works Diagram" style="max-width: 85%; border-radius: 1rem; box-shadow: 0 0 20px rgba(44, 132, 250, 0.3); margin-top: 1.5rem; margin-bottom: 1.5rem;" class="scroll-animate" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111111/cccccc?text=How+UNI+Works';">
-        <p style="max-width: 800px; margin: 0 auto 2rem; font-size: 1.125rem;">UNI is the connective tissue of the real world. It brings every layer of the IRL experience together all in one intelligent, personalized interface. From concerts and coffee shops to art shows, nightlife, and hiking trails, UNI transforms a scattered landscape into a seamless ecosystem for discovery. Powered by the largest event and location databases on Earth, UNI doesn’t just show what’s happening nearby. It learns what matters to each user through their tastes, habits, and real-world behavior. Every profile is shaped by favorite artists, go-to spots, campus life, and social preferences—fueling smarter recommendations and helping users connect with people they naturally align with. Each RSVP, check-in, swipe, and save becomes a behavioral breadcrumb. Together, they form the most insightful real-time dataset of human activity & lifestyle preferences in the physical world..</p>
+    <!-- HOW IT WORKS SECTION -->
+<!-- HOW IT WORKS SECTION -->
+<section style="background: transparent; color: white; padding: 4rem 2rem; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.75rem; margin-bottom: 1rem; animation: fadeInDown 1s ease-out;">How It Works</h2>
+    <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 3rem; animation: fadeInDown 1.3s ease-out;">
+      UNI turns real-life movement into real-time data. Here’s how our insight engine captures culture as it happens:
+    </p>
+
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative; animation: fadeInUp 1.5s ease-out;">
+      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px; margin-bottom: 3rem; position: relative;">
+        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Behavioral Profiles</h3>
+        <p style="color: #94a3b8;">Users onboard with their interests, favorite artists, schools, go-to spots, and social energy — building a full lifestyle fingerprint.</p>
+        <div class="down-arrow"></div>
+      </div>
+
+      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px; margin-bottom: 3rem; position: relative;">
+        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M9 17l3-3 3 3"/><path d="M9 13h6"/></svg>
+        </div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Live Map Signals</h3>
+        <p style="color: #94a3b8;">Every RSVP, swipe, check-in, and search gets encrypted and mapped — showing not just where users are, but what they’re craving.</p>
+        <div class="down-arrow"></div>
+      </div>
+
+      <div style="flex: 1; background: rgba(0,0,0,0.6); border-radius: 16px; padding: 2rem; border: 1px solid #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.35); width: 100%; max-width: 500px;">
+        <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem;">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">UNI Atlas AI</h3>
+        <p style="color: #94a3b8;">Our proprietary intelligence engine distills these movements into cultural trend forecasts and hyperlocal targeting blueprints.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<style>
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.down-arrow {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-left: 3px solid #3b82f6;
+  border-bottom: 3px solid #3b82f6;
+  transform: translateX(-50%) rotate(-45deg);
+}
+</style>
+
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATIONS -->
+<style>
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 
     <section id="comparisonTableSection" class="container scroll-animate">
         <h2 class="comparison-title">Social Intelligence Showdown</h2>
