@@ -641,6 +641,215 @@ footer {
         <img src="https://i.imgur.com/hd3R7U5.png" alt="How UNI Works Diagram" style="max-width: 85%; border-radius: 1rem; box-shadow: 0 0 20px rgba(44, 132, 250, 0.3); margin-top: 1.5rem; margin-bottom: 1.5rem;" class="scroll-animate" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111111/cccccc?text=How+UNI+Works';">
         <p style="max-width: 800px; margin: 0 auto 2rem; font-size: 1.125rem;">UNI is the connective tissue of the real world. It brings every layer of the IRL experience together all in one intelligent, personalized interface. From concerts and coffee shops to art shows, nightlife, and hiking trails, UNI transforms a scattered landscape into a seamless ecosystem for discovery. Powered by the largest event and location databases on Earth, UNI doesn’t just show what’s happening nearby. It learns what matters to each user through their tastes, habits, and real-world behavior. Every profile is shaped by favorite artists, go-to spots, campus life, and social preferences—fueling smarter recommendations and helping users connect with people they naturally align with. Each RSVP, check-in, swipe, and save becomes a behavioral breadcrumb. Together, they form the most insightful real-time dataset of human activity & lifestyle preferences in the physical world..</p>
     </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNI AI Comparison Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 3rem;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b);
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease-out;
+      color: #ffffff;
+    }
+
+    p {
+      text-align: center;
+      color: #a1a1aa;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    table {
+      width: 100%;
+      min-width: 1300px;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: rgba(15, 23, 42, 0.8);
+      color: #e4e4e7;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1.5rem 1.2rem;
+      border-bottom: 1px solid #2d3140;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(30, 41, 59, 0.8);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    td {
+      font-size: 1rem;
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      transition: transform 0.3s;
+      filter: drop-shadow(0 0 10px #0ff3);
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    .highlight {
+      font-weight: 700;
+    }
+
+    td i {
+      margin-right: 0.5rem;
+      color: #60a5fa;
+    }
+
+    tr:hover {
+      background-color: rgba(60, 70, 100, 0.3);
+    }
+
+    /* Particle animation background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/qWnK3GG.png') center/cover no-repeat;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color: #ffffff;">Social Intelligence Showdown</h1>
+  <p>How UNI's real-world insight compares to legacy tools</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th><img src="https://i.imgur.com/orKCxuA.png" class="logo" alt="Google Trends"></th>
+          <th><img src="https://i.imgur.com/L68Ovje.png" class="logo" alt="Meta & TikTok Ads"></th>
+          <th><img src="https://i.imgur.com/li65jaI.png" class="logo" alt="Social DNA by UNI"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fas fa-brain"></i> What It Captures</td>
+          <td>Search interest only</td>
+          <td>Ad impressions & click-through rates</td>
+          <td>Live, social behavior across places, people & interests</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-bullseye"></i> Intent Signal</td>
+          <td>Curiosity or passive search</td>
+          <td>Scroll behavior, view time</td>
+          <td>RSVPs, saves, check-ins, swipes — true intent</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-users"></i> Demographics</td>
+          <td>None</td>
+          <td>Cookie-based, inferred targeting</td>
+          <td>Rich profiles: age, school, interests, vibes</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-clock"></i> Timeliness</td>
+          <td>Delayed and aggregated</td>
+          <td>Data lags, episodic delivery</td>
+          <td>Real-time & adaptive to behavior</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-network-wired"></i> Social Graph</td>
+          <td>None</td>
+          <td>None</td>
+          <td>Compatibility engine with friend & match layer</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-layer-group"></i> Behavioral Depth</td>
+          <td>"What are they Googling?"</td>
+          <td>"Who might engage?"</td>
+          <td>"What are they doing, where, when — and with who?"</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-chart-line"></i> Predictive Power</td>
+          <td>Low</td>
+          <td>Reactive metrics</td>
+          <td>Forecasting trends before they happen</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-database"></i> Output</td>
+          <td>Charts, search volume</td>
+          <td>CPM, CTR, CPC dashboards</td>
+          <td>Heatmaps, dynamic targeting, cultural forecasting</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-rocket"></i> Use Case</td>
+          <td>SEO, macro trend guessing</td>
+          <td>Digital ad performance</td>
+          <td>Hyper-local, culture-first brand strategy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
 
     <h2 class="solutions-title scroll-animate">Our Solutions</h2>
     <div class="solutions-carousel-container scroll-animate">
